@@ -1,6 +1,6 @@
 {
   "name": "craft-it-test-report",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Custom Playwright test reporter with HTML reports and PDF export",
   "main": "dist/reporter/craft-reporter.js",
   "types": "dist/index.d.ts",

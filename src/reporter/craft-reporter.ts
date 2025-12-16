@@ -169,6 +169,9 @@ class CraftReporter implements Reporter {
   async onEnd(result: FullResult): Promise<void> {
     const duration = Date.now() - this.startTime.getTime();
 
+    // Sort tests by name using natural sort (handles numbers correctly: 001, 002, 010)
+    this.tests.sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: 'base' }));
+
     const reportData: ReportData = {
       timestamp: new Date().toISOString(),
       totalTests: this.tests.length,
